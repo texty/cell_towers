@@ -20,7 +20,7 @@
 
     var dateFormat = d3.timeFormat("%d.%m.%Y");
 
-    d3.csv("grouped.csv", function(err, csv_data) {
+    d3.csv("data/grouped.csv", function(err, csv_data) {
 
         if (err) throw err;
 
