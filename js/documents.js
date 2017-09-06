@@ -10,9 +10,7 @@ var documents = (function() {
         if (err) throw err;
         
         data.forEach(function(d){
-            debugger;
             d.adjudication_date = new Date(d.adjudication_date);
-            console.log(d.adjudication_date);
         });
         
         __map__ = d3.map(data, function(d) {return d.doc_id});

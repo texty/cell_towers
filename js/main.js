@@ -1,12 +1,13 @@
 (function() {
 
     var source = $("#info-box-template").html();
-    var template = Handlebars.compile(source);
+    var infobox_template = Handlebars.compile(source);
 
     var map = L.map('map', {
         center: [50.46, 30.5],
         zoom: 9,
-        renderer: L.canvas()
+        renderer: L.canvas(),
+        scrollWheelZoom: false
     });
 
 
@@ -54,7 +55,7 @@
         // var hover_layers = [];
 
 
-        var default_style = {fillColor: default_color, fillOpacity: 0.5};
+        var default_style = {fillColor: default_color, fillOpacity: 0.25};
         var hover_style = {fillColor: "#1E90FF", fillOpacity: 0.8};
         var selected_style = {fillColor: "#1E90FF", fillOpacity: 0.8};
 
@@ -68,7 +69,7 @@
                     color: "#000",
                     weight: 1,
                     opacity: 1,
-                    fillOpacity: 0.5,
+                    fillOpacity: 0.25,
                     stroke: 0
                 };
             },
@@ -78,7 +79,9 @@
             }
         });
 
-        window.points_layer = points_layer;
+
+        window.points_layer = points_layer; //todo debug only;
+
 
         points_layer.on("click", function(e) {
             var props = e.layer.feature.properties;
@@ -86,16 +89,21 @@
 
             var active_layer = e.layer;
 
-            d3.select(".map-popup-container").html(template(props));
+            showInfobox(props);
+
             select_layer(active_layer);
 
             join_layers(props, points_layer);
 
+            // d3.select(".map-popup-container")
+            //     .on("mouseleave", function(){console.log("pane mouseleave"); clear_hover()});
+
             d3.selectAll(".map-popup-container li a")
                 .on("mouseover", function() {
+                    console.log("mouseover");
                     hover_id(active_layer, this.text);
                 })
-                .on("mouseout", clear_hover);
+                .on("mouseleave", clear_hover);
         });
 
         points_layer.addTo(map);
@@ -135,6 +143,16 @@
             points_layer.eachLayer(function(l) {
                 if (l.feature.properties.docs_text.indexOf(d.id) >= 0) d.layers.push(l);
             });
+        });
+    }
+
+    function showInfobox(properties) {
+        d3.select(".map-popup-container").html(infobox_template(properties));
+
+        const container = document.querySelector('#ul-container');
+        Ps.initialize(container, {
+            suppressScrollX: true
+            
         });
     }
 

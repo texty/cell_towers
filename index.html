@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/leaflet.css" />
+    <link rel="stylesheet" href="css/perfect-scrollbar.min.css" />
     <link rel="stylesheet" href="css/application.css">
 
     <meta property="og:site_name" content="ТЕКСТИ.ORG.UA"/>
@@ -92,14 +93,8 @@
 <div class="container-fluid">
     <div class="row-fluid no-gutters">
         <div class="col-xs-12">
-            <div class="map-container" id="map">
-                
-                
-                <div class="map-popup-container">
-
-
-                </div>
-            </div>
+            <div class="map-popup-container"></div>
+            <div class="map-container" id="map"></div>
         </div>
     </div>
 </div>
@@ -223,14 +218,29 @@
 
 
 <script type="text/x-handlebars-template" id="info-box-template">
-    <p>lac - {{lac}}; cid - {{cid}}</p>
+    <!--<h3>Заголовок</h3>-->
 
-    <!--<p>Справи</p>-->
-    <ul>
-    {{#each docs}}
-    <li><a href="http://reyestr.court.gov.ua/Review/{{this.id}}">{{this.id}}</a><span class="date">{{this.date}}</span></li>
-    {{/each}}
-    </ul>
+    <p>Ідентифікатори базової станції:</p>
+    <div class="p-table cell-data">
+        <div class="p-row">
+            <div class="p-cell">LAC:&nbsp;</div>
+            <div class="p-cell">{{lac}}</div>
+        </div>
+
+        <div class="p-row">
+            <div class="p-cell">CID:&nbsp;</div>
+            <div class="p-cell">{{cid}}</div>
+        </div>
+    </div>
+
+    <p class="ul-caption">Згадується у {{docs.length}} судових рішеннях:</p>
+    <div id="ul-container" class="always-visible">
+        <ul>
+        {{#each docs}}
+        <li><a target="_blank" href="http://reyestr.court.gov.ua/Review/{{this.id}}">{{this.id}}</a><span class="date">{{this.date}}</span></li>
+        {{/each}}
+        </ul>
+    </div>
 </script>
 
 
@@ -238,6 +248,7 @@
 <script src="lib/d3.v4.min.js"></script>
 <script src="lib/leaflet.js"></script>
 <script src="lib/handlebars.min.js"></script>
+<script src="lib/perfect-scrollbar.min.js"></script>
 <script src="lib/share-behavior.js"></script>
 <script src="lib/smooth_scroll.js"></script>
 
