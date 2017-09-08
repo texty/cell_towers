@@ -349,6 +349,8 @@ h2 span {
     font-style: italic;
     color: #999;
     padding-left: 40px; }
+  .map-popup-container li a {
+    color: #ff7800; }
   .map-popup-container li a:hover {
     color: #1E90FF; }
   .map-popup-container .p-table {

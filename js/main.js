@@ -95,8 +95,6 @@
 
             join_layers(props, points_layer);
 
-            // d3.select(".map-popup-container")
-            //     .on("mouseleave", function(){console.log("pane mouseleave"); clear_hover()});
 
             d3.selectAll(".map-popup-container li a")
                 .on("mouseover", function() {
@@ -125,6 +123,7 @@
 
         function clear_hover() {
             points_layer.setStyle(default_style);
+            if (selected_layer) selected_layer.setStyle(selected_style);
         }
 
     });
