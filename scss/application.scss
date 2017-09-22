@@ -12,6 +12,8 @@ body {
     height: 100vh;
     margin-top: 0;
     color: $main-text;
+
+  background: #0E0E0E;
 }
 
 
@@ -191,18 +193,20 @@ h2 span {
   background-color:rgba(255,0,0,0.0);
 }
 
-#map {
-  background: #000;
+
+.map-container {
+  margin-top: 90px;
+  position: relative;
 }
 
 $map_height: 100vh;
 //$margin: 20px;
-
-
-.map-container {
+#map {
+  background: #000;
   width: 100%;
   height: $map_height;
 }
+
 
 .map-popup-container {
   font-family: 'Open Sans', Arial, sans-serif;
