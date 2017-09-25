@@ -83,9 +83,6 @@
         });
 
 
-        window.points_layer = points_layer; //todo debug only;
-
-
         points_layer.on("click", function(e) {
             var props = e.layer.feature.properties;
             join_date(props);
