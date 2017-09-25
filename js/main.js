@@ -57,7 +57,10 @@
 
         var default_style = {fillColor: default_color, fillOpacity: 0.25};
         var hover_style = {fillColor: "#1E90FF", fillOpacity: 0.8};
+        var hover_background_style = {fillColor: default_color, fillOpacity: 0.1};
+
         var selected_style = {fillColor: "#1E90FF", fillOpacity: 0.8};
+
 
 
         var points_layer = L.geoJSON(geojson, {
@@ -96,25 +99,30 @@
             join_layers(props, points_layer);
 
 
-            d3.selectAll(".map-popup-container li a")
-                .on("mouseover", function() {
+            var rows = d3.selectAll(".map-popup-container li a");
+            
+            rows.on("mouseover", function() {
                     console.log("mouseover");
                     hover_id(active_layer, this.text);
-                })
-                .on("mouseleave", clear_hover);
+
+                    rows.classed("hover", false);
+                    d3.select(this).classed("hover", true);
+                });
+                // .on("mouseleave", clear_hover);
         });
 
         points_layer.addTo(map);
 
 
         function select_layer(layer) {
-            if (selected_layer) selected_layer.setStyle(default_style);
+            points_layer.setStyle(default_style);
+            // if (selected_layer) selected_layer.setStyle(default_style);
             layer.setStyle(selected_style);
             selected_layer = layer;
         }
 
         function hover_id(layer, doc_id) {
-            points_layer.setStyle({fillOpacity: 0.1});
+            points_layer.setStyle(hover_background_style);
 
             layer.feature.properties.docs
                 .filter(function(d) {return d.id == doc_id})[0].layers

@@ -274,7 +274,9 @@
     <div id="ul-container" class="always-visible">
         <ul>
         {{#each docs}}
-        <li><a target="_blank" href="http://reyestr.court.gov.ua/Review/{{this.id}}">{{this.id}}</a><span class="date">{{this.date}}</span></li>
+        <li>
+            <a class="number" target="_blank" href="http://reyestr.court.gov.ua/Review/{{this.id}}" title="Читати рішення">{{this.id}}</a>
+            <span class="date">{{this.date}}</span></li>
         {{/each}}
         </ul>
     </div>

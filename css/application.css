@@ -335,23 +335,29 @@ h2 span {
   .map-popup-container #ul-container {
     position: relative;
     overflow: hidden;
-    max-height: 500px;
+    max-height: 80vh;
     margin-top: 5px;
     margin-bottom: 5px; }
   .map-popup-container ul {
     padding-left: 0;
     margin-top: 0px;
-    margin-bottom: 0px; }
+    margin-bottom: 0px;
+    display: table;
+    width: 100%; }
   .map-popup-container li {
-    list-style-type: none; }
+    list-style-type: none;
+    display: table-row; }
   .map-popup-container li span.date {
     font-style: italic;
     color: #999;
-    padding-left: 40px; }
+    display: table-cell; }
   .map-popup-container li a {
-    color: #ff7800; }
-  .map-popup-container li a:hover {
-    color: #1E90FF; }
+    color: #ff7800;
+    display: table-cell; }
+  .map-popup-container li a:hover,
+  .map-popup-container li a.hover {
+    color: #1E90FF;
+    text-decoration: underline; }
   .map-popup-container .p-table {
     display: table; }
   .map-popup-container .p-row {
