@@ -207,6 +207,17 @@ $map_height: 100vh;
   height: $map_height;
 }
 
+.map-title {
+
+  position: absolute;
+  left: 150px;
+  top: 50px;
+
+  font-size: 22px;
+  z-index: 999;
+
+}
+
 
 .map-popup-container {
   font-family: 'Open Sans', Arial, sans-serif;
@@ -246,7 +257,7 @@ $map_height: 100vh;
   #ul-container {
     position: relative;
     overflow: hidden;
-    max-height: 80vh;
+    max-height: 40vh;
 
     margin-top: 5px;
     margin-bottom: 5px;
@@ -290,6 +301,12 @@ $map_height: 100vh;
   /* to make scrollbars always visible */
   .always-visible.ps > .ps__scrollbar-y-rail {
     opacity: 0.6;
+  }
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    //color: #ff7800;
   }
 }
 

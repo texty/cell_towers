@@ -151,7 +151,7 @@
     }
 
     function showInfobox(properties) {
-        d3.select(".map-popup-container").html(infobox_template(properties));
+        d3.select(".map-popup-content").html(infobox_template(properties));
 
         const container = document.querySelector('#ul-container');
         Ps.initialize(container, {
