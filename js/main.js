@@ -6,15 +6,19 @@
     var map = L.map('map', {
         center: [50.46, 30.5],
         zoom: 9,
+        minZoom: 6,
+        maxZoom: 15,
         renderer: L.canvas(),
         scrollWheelZoom: false
     });
 
 
+    window.map = map; //todo
+
     var CartoDB_DarkMatter = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
-        subdomains: 'abcd',
-        maxZoom: 15
+        subdomains: 'abcd'
+        // maxZoom: 15
     });
 
     CartoDB_DarkMatter.addTo(map);
@@ -82,6 +86,7 @@
             }
         });
 
+        window.points_layer = points_layer;
 
         points_layer.on("click", function(e) {
             var props = e.layer.feature.properties;
@@ -99,7 +104,6 @@
             var rows = d3.selectAll(".map-popup-container li a");
             
             rows.on("mouseover", function() {
-                    console.log("mouseover");
                     hover_id(active_layer, this.text);
 
                     rows.classed("hover", false);
@@ -109,6 +113,18 @@
         });
 
         points_layer.addTo(map);
+
+        map.on("zoomend", function() {
+            var currentZoom = map.getZoom();
+
+            var r;
+
+            if (currentZoom > 8) r = 3;
+            else if (currentZoom == 8) r = 2;
+            else r = 1;
+
+            points_layer.setStyle({radius: r});
+        })
 
 
         function select_layer(layer) {
