@@ -97,7 +97,8 @@ p {
   margin-left: 0;
   padding-top: 2vw;
   font-size: 1.7em;
-  font-weight: 300; }
+  font-weight: 300;
+  margin-top: 19vw; }
 .header-container .credits {
   line-height: 1.5em;
   font-weight: 300; }
@@ -112,7 +113,7 @@ p {
     font-weight: 300; }
 .header-container .header {
   position: relative;
-  margin-top: 0;
+  margin-top: -35vw;
   width: 100%;
   bottom: 0; }
 .header-container .header-text {
