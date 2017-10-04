@@ -60,7 +60,8 @@
 <!-- svg -->
 
 
-<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" 
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
+        id="hands_and_eyes" 
 	viewBox="0 0 1600 590"
 	preserveAspectRatio="xMinYMin"
 	>
@@ -88,56 +89,6 @@
   <path id="right_hand" fill="#FFFFFF" stroke="#000000" stroke-width="1.417" stroke-miterlimit="10" d="M1170.406 590s-21.092-61.02-46.73-109.135c-11.32-21.24-26.334-30.26-33.367-58.41 0 0-7.02-43.386-10.18-56.73-3.16-13.34-6.6-68.98-6.6-68.98s.58-18.405 19.45-17.854c18.87.55 18.35 24.59 20.056 37.6 1.72 13.01 4.546 47.54 4.546 47.54s3.045 7.24 11.06 7.41c0 0 12.19-.4 9.645-22.17l-8.908-93.127-68.116-33.474s-11.106-7.878-6.205-20.573c0 0 3.035-12.52 24.9-5.203l76.86 36.394s6.416 3.15 8.37 13.776c0 0 15.63-3.848 19.003 11.823 0 0 14.31 124.93 10.396 177.518L1279.63 590"/>
 </svg>
 
-
-<script src="js/anime.min.js"></script>
-<script>
-var path_strings = Array.from(document.querySelectorAll("path.lid")).map(d => d.getAttribute("d"));
-console.log(path_strings[2])
-
-
-//
-var closed_eye = "M517.133 303.998s75.16 51.272 153.392 0c0 0-17.276-44.976-78.232-52.55-.002 0-57.105 10.225-75.16 52.55z" 
-
-
-
-
-var half_blink = anime({
-	targets: '#e1', // left eyelid
-	d: closed_eye,
-	duration: 1500,
-  	direction: 'alternate',
-  	easing: 'easeInCubic',
-        loop: 20,
-        delay: function() { return 2000 + anime.random(0, 4000); }
-
-})
-
-var left_hand_move = anime({
-	targets: ['#left_hand', '#left_phone'],
-	rotate: 1,
-	duration: 2500,
-  	direction: 'alternate',
-        loop: 10,
-  	easing: 'linear',
-        delay: function() { return 1000 + anime.random(0, 500); }
-
-})
-
-
-var right_hand_move = anime({
-	targets: ['#right_hand', '#right_phone' ],
-	duration: 3000,
-        loop: 2,
-  	direction: 'alternate',
-	translateX: 20,
-	translateY: 30,
-  	easing: 'easeInQuart',
-        delay: function() { return 1000 + anime.random(0, 80); }
-	
-})
-
-
-</script>
 
 
     <div class="container">
@@ -486,6 +437,7 @@ var right_hand_move = anime({
 
 <script src="js/documents.js"></script>
 <script src="js/main.js"></script>
+<script src="js/anim.js"></script>
 
 <script type="text/javascript">
 
@@ -510,43 +462,7 @@ var right_hand_move = anime({
     });
 </script>
 
-<script>
-//    var path_strings = Array.from(document.querySelectorAll("path.lid")).map(function(d){return d.getAttribute("d")});
-//    console.log(path_strings[2]);
 
-    var closed_eye = "M517.133 303.998s75.16 51.272 153.392 0c0 0-17.276-44.976-78.232-52.55-.002 0-57.105 10.225-75.16 52.55z"
-
-    var half_blink = anime({
-        targets: '#e1', // left eyelid
-        d: closed_eye,
-        duration: 1500,
-        direction: 'alternate',
-        easing: 'easeInCubic',
-        loop: 20,
-        delay: function() { return 2000 + anime.random(0, 4000); }
-    });
-
-    var left_hand_move = anime({
-        targets: ['#left_hand', '#left_phone'],
-        rotate: 1,
-        duration: 2500,
-        direction: 'alternate',
-        loop: 10,
-        easing: 'linear',
-        delay: function() { return 1000 + anime.random(0, 500); }
-    });
-
-    var right_hand_move = anime({
-        targets: ['#right_hand', '#right_phone' ],
-        duration: 3000,
-        loop: 2,
-        direction: 'alternate',
-        translateX: 20,
-        translateY: 30,
-        easing: 'easeInQuart',
-        delay: function() { return 1000 + anime.random(0, 80); }
-    })
-</script>
 
 
 </body>
