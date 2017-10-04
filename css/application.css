@@ -209,6 +209,12 @@ p {
       .quote::before {
         font-size: 7em; } }
 
+.term {
+  border-bottom: 2px dotted #cccccc;
+  cursor: pointer; }
+  .term:hover {
+    color: #ccc; }
+
 .sources {
   color: #BBC0BF;
   margin-top: 0.5em;

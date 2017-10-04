@@ -41,6 +41,14 @@ p {
   }
 }
 
+.term {
+  border-bottom: 2px dotted #cccccc;
+  cursor: pointer;
+
+  &:hover {
+    color: #ccc;
+  }
+}
 
 .sources {
   color: #BBC0BF;
