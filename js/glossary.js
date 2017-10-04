@@ -11,7 +11,7 @@ var glossary = (function() {
     
         mappings.forEach(function(d) {
             d3.selectAll(".term." + d.id)
-                .attr("title", d.name + " " + d.description);
+                .attr("title", d.name + " — " + d.description);
             
         })
         
