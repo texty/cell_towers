@@ -19,11 +19,11 @@ a {
         text-decoration: none;
     }
     &.dotted {
-    /*for links*/
-    //color: #4b444d;
-    border-bottom: 2px dotted #cccccc;
+      /*for links*/
+      //color: #4b444d;
+      border-bottom: 2px dotted #cccccc;
     &:hover {
-        color: #969696;
+        color: #99c;
         }
     }
 }

@@ -19,7 +19,7 @@ a {
     /*for links*/
     border-bottom: 2px dotted #cccccc; }
     a.dotted:hover {
-      color: #969696; }
+      color: #99c; }
 
 h1 {
   font-size: 4em;
@@ -87,16 +87,18 @@ p {
 
 .header-container h1 {
   text-align: left;
-  font-size: 2.7em; }
+  font-size: 3.6em;
+  letter-spacing: 0.03em;
+  line-height: 1.4; }
 .header-container h2 {
   font-size: 2.0em;
   margin-left: 10%; }
 .header-container p.subtitle {
   width: auto;
-  line-height: 1.7em;
+  line-height: 2.2;
   margin-left: 0;
   padding-top: 2vw;
-  font-size: 1.7em;
+  font-size: 2em;
   font-weight: 300;
   margin-top: 19vw; }
 .header-container .credits {
@@ -113,7 +115,7 @@ p {
     font-weight: 300; }
 .header-container .header {
   position: relative;
-  margin-top: -35vw;
+  margin-top: 0;
   width: 100%;
   bottom: 0; }
 .header-container .header-text {
@@ -186,7 +188,8 @@ body {
   background: #0E0E0E; }
 
 p {
-  font-size: 1.6em; }
+  font-size: 2em;
+  line-height: 2.2em; }
 
 .quote {
   margin-top: 1em;
@@ -263,7 +266,7 @@ h2 span {
   margin-bottom: 60px; }
 
 .main-text h3 {
-  font-size: 2em; }
+  font-size: 2.8em; }
 
 .disclaimer {
   font-size: 1.3em; }
@@ -360,7 +363,7 @@ h2 span {
     color: #999;
     display: table-cell; }
   .map-popup-container li a {
-    color: #ff7800;
+    color: #EF5223;
     display: table-cell; }
   .map-popup-container li a:hover,
   .map-popup-container li a.hover {

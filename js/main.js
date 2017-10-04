@@ -53,7 +53,7 @@
             layer.bindPopup(popupContent);
         }
 
-        var default_color = "#ff7800";
+        var default_color = "#EF5223";
 
         var selected_layer;
         // var hover_layers = [];
