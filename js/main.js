@@ -46,12 +46,12 @@
                 .map(function(d) { return {id: d} });
         });
 
-
-        function onEachFeature(feature, layer) {
-            var popupContent = "<p>" + feature.properties.docs;
-
-            layer.bindPopup(popupContent);
-        }
+        //
+        // function onEachFeature(feature, layer) {
+        //     var popupContent = "<p>" + feature.properties.docs;
+        //
+        //     layer.bindPopup(popupContent);
+        // }
 
         var default_color = "#EF5223";
 
