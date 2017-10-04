@@ -5,7 +5,7 @@ html {
 body {
   font-family: Open Sans, sans-serif;
   font-size: 100%;
-  color: #ddd;
+  color: #ccc;
   width: 100%;
   /*footer height plus padding*/
   margin-bottom: 200px; }
@@ -95,7 +95,6 @@ p {
   margin-left: 10%; }
 .header-container p.subtitle {
   width: auto;
-  line-height: 2.2;
   margin-left: 0;
   padding-top: 2vw;
   font-size: 2em;
@@ -106,7 +105,9 @@ p {
   font-weight: 300; }
   .header-container .credits h6 {
     font-size: 1.2em;
-    line-height: 1.5em; }
+    line-height: 1.9; }
+    .header-container .credits h6 b {
+      color: #ccc; }
   .header-container .credits span {
     font-weight: 700; }
   .header-container .credits.date {
@@ -184,12 +185,12 @@ p {
 body {
   height: 100vh;
   margin-top: 0;
-  color: #ddd;
+  color: #ccc;
   background: #0E0E0E; }
 
 p {
   font-size: 2em;
-  line-height: 2.2em; }
+  line-height: 2; }
 
 .quote {
   margin-top: 1em;
@@ -266,7 +267,12 @@ h2 span {
   margin-bottom: 60px; }
 
 .main-text h3 {
-  font-size: 2.8em; }
+  font-size: 2.8em;
+  color: #ccc;
+  margin-bottom: 28px; }
+.main-text i {
+  font-style: normal;
+  color: brown; }
 
 .disclaimer {
   font-size: 1.3em; }

@@ -19,7 +19,7 @@ body {
 
 p {
   font-size: 2em;
-  line-height: 2.2em;
+  line-height: 2;
 }
 
 .quote {
@@ -136,6 +136,13 @@ h2 span {
 .main-text {
   h3 {
     font-size: 2.8em;
+    color: #ccc;
+    margin-bottom: 28px;
+  }
+
+  i {
+    font-style: normal;
+    color: brown;
   }
 }
 
