@@ -18,8 +18,8 @@ body {
 
 
 p {
-  font-size: 1.6em;
-  //font-size: 2vw;
+  font-size: 2em;
+  line-height: 2;
 }
 
 .quote {
@@ -135,7 +135,14 @@ h2 span {
 
 .main-text {
   h3 {
-    font-size: 2em;
+    font-size: 2.8em;
+    color: #ccc;
+    margin-bottom: 28px;
+  }
+
+  i {
+    font-style: normal;
+    color: brown;
   }
 }
 
@@ -284,7 +291,7 @@ $map_height: 100vh;
   }
 
   li a {
-    color: #ff7800;
+    color: #EF5223;
     display: table-cell;
   }
 
