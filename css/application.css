@@ -100,6 +100,15 @@ p {
   font-size: 2em;
   font-weight: 300;
   margin-top: 19vw; }
+  @media (max-width: 1285px) {
+    .header-container p.subtitle {
+      margin-top: 20vw; } }
+  @media (max-width: 1024px) {
+    .header-container p.subtitle {
+      margin-top: 22vw; } }
+  @media (max-width: 767px) {
+    .header-container p.subtitle {
+      margin-top: 8vw; } }
 .header-container .credits {
   line-height: 1.5em;
   font-weight: 300; }
@@ -116,9 +125,12 @@ p {
     font-weight: 300; }
 .header-container .header {
   position: relative;
-  margin-top: 0;
   width: 100%;
-  bottom: 0; }
+  bottom: 0;
+  margin-top: -37vw; }
+  @media (max-width: 767px) {
+    .header-container .header {
+      margin-top: -2vw; } }
 .header-container .header-text {
   position: relative; }
 .header-container video {
