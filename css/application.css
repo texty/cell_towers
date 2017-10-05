@@ -211,7 +211,7 @@ p {
 
 .term {
   border-bottom: 2px dotted #cccccc;
-  cursor: pointer; }
+  cursor: help; }
   .term:hover {
     color: #ccc; }
 

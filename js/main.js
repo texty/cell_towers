@@ -65,8 +65,6 @@
 
         var selected_style = {fillColor: "#1E90FF", fillOpacity: 0.8};
 
-
-
         var points_layer = L.geoJSON(geojson, {
 
             style: function (feature) {
@@ -118,13 +116,17 @@
             var currentZoom = map.getZoom();
 
             var r;
-
-            if (currentZoom > 8) r = 3;
+            if (currentZoom > 13) r = 5;
+            else if (currentZoom > 8) r = 3;
             else if (currentZoom == 8) r = 2;
             else r = 1;
 
-            points_layer.setStyle({radius: r});
-        })
+            var op;
+            if (currentZoom > 13) op = 0.5;
+            else op = 0.25;
+
+            points_layer.setStyle({radius: r, fillOpacity: op});
+        });
 
 
         function select_layer(layer) {

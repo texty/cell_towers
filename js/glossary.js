@@ -12,14 +12,9 @@ var glossary = (function() {
         mappings.forEach(function(d) {
             d3.selectAll(".term." + d.id)
                 .attr("title", d.name + " — " + d.description);
-            
-        })
-        
-        
-        
-        
-        
-        
+
+            tippy(".term", {animation: false, duration: 0, delay: 0, size: "big"});
+        });
     });
     
     
