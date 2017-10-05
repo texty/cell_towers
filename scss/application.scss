@@ -322,6 +322,10 @@ $map_height: 100vh;
     margin-top: 0;
     margin-bottom: 30px;
     //color: #ff7800;
+
+    @media #{$brk-spnarrow} {
+      display: none;
+    }
   }
 }
 

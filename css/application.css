@@ -404,5 +404,8 @@ h2 span {
   .map-popup-container h3 {
     margin-top: 0;
     margin-bottom: 30px; }
+    @media (max-width: 767px) {
+      .map-popup-container h3 {
+        display: none; } }
 
 /*# sourceMappingURL=application.css.map */
