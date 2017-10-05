@@ -121,11 +121,11 @@
             else if (currentZoom == 8) r = 2;
             else r = 1;
 
-            var op;
-            if (currentZoom > 13) op = 0.5;
-            else op = 0.25;
+            // var op;
+            // if (currentZoom > 13) op = 0.5;
+            // else op = 0.25;
 
-            points_layer.setStyle({radius: r, fillOpacity: op});
+            points_layer.setStyle({radius: r});
         });
 
 
