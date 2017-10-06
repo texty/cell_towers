@@ -1,6 +1,6 @@
 (function() {
 
-    var source = $("#info-box-template").html();
+    var source = document.getElementById("info-box-template").innerHTML;
     var infobox_template = Handlebars.compile(source);
 
     var map = L.map('map', {
@@ -12,20 +12,19 @@
         scrollWheelZoom: false
     });
 
-
-    window.map = map; //todo
+    if (L.Hash) new L.Hash(map);
 
     var CartoDB_DarkMatter = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
         subdomains: 'abcd'
-        // maxZoom: 15
     });
 
     CartoDB_DarkMatter.addTo(map);
 
     var dateFormat = d3.timeFormat("%d.%m.%Y");
 
-    d3.csv("data/grouped.csv", function(err, csv_data) {
+    var prefix = window.__data_folder_root__ ? __data_folder_root__ : "";
+    d3.csv(prefix + "data/grouped.csv", function(err, csv_data) {
 
         if (err) throw err;
 
@@ -45,13 +44,6 @@
             d.properties.docs=d.properties.docs.split("\n")
                 .map(function(d) { return {id: d} });
         });
-
-        //
-        // function onEachFeature(feature, layer) {
-        //     var popupContent = "<p>" + feature.properties.docs;
-        //
-        //     layer.bindPopup(popupContent);
-        // }
 
         var default_color = "#EF5223";
 
@@ -83,8 +75,6 @@
                 return L.circleMarker(latlng);
             }
         });
-
-        window.points_layer = points_layer;
 
         points_layer.on("click", function(e) {
             var props = e.layer.feature.properties;

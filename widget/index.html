@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Вони стежать за тобою. І ти цього хочеш</title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/leaflet.css" />
+    <link rel="stylesheet" href="../css/perfect-scrollbar.min.css" />
+    <link rel="stylesheet" href="css/application.css">
+
+    <meta property="og:site_name" content="ТЕКСТИ.ORG.UA"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Вони стежать за тобою. І ти цього хочеш"/>
+    <meta property="og:image" content="http://texty.org.ua/d/cell_towers/img/og.png"/>
+    <meta property="og:description" content="Дані з вашого мобільного телефону розкажуть про вас усе - навіть без прослуховування"/>
+    <meta property="og:url" content="http://texty.org.ua/d/cell_towers">
+
+    <meta name="twitter:site" content="@textyorgua"/>
+    <meta property="twitter:account_id" content="49572937"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:url" content="http://texty.org.ua/d/cell_towers"/>
+    <meta name="twitter:title" content="Вони стежать за тобою. І ти цього хочеш"/>
+    <meta name="twitter:description" content="Дані з вашого мобільного телефону розкажуть про вас усе - навіть без прослуховування"/>
+    <meta name="twitter:image:src" content="http://texty.org.ua/d/cell_towers/img/og.png"/>
+    <meta name="twitter:image:width" content="1200"/>
+    <meta name="twitter:image:height" content="630"/>
+    <!-- Other Meta Tags -->
+    <meta name="title" content="Вони стежать за тобою. І ти цього хочеш">
+    <meta name="description" content="Дані з вашого мобільного телефону розкажуть про вас усе - навіть без прослуховування">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,italic&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <div class="row-fluid no-gutters">
+        <div class="col-xs-12">
+
+            <div class="map-container">
+                <div class="map-popup-container">
+                    <h3>Кожна точка — це базова станція що згадується у судовому рішенні</h3>
+
+                    <div class="map-popup-content">
+                        <p>Клікайте по базовій станції на карті щоб дивитись рішення у яких вона фігурує</p>
+
+                    </div>
+                </div>
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/x-handlebars-template" id="info-box-template">
+    <p>Ідентифікатори базової станції:</p>
+    <div class="p-table cell-data">
+        <div class="p-row">
+            <div class="p-cell">LAC:&nbsp;</div>
+            <div class="p-cell">{{lac}}</div>
+        </div>
+
+        <div class="p-row">
+            <div class="p-cell">CID:&nbsp;</div>
+            <div class="p-cell">{{cid}}</div>
+        </div>
+    </div>
+
+    <p class="ul-caption">Згадується у {{docs.length}} судових рішеннях:</p>
+    <div id="ul-container" class="always-visible">
+        <ul>
+        {{#each docs}}
+        <li>
+            <a class="number" target="_blank" href="http://reyestr.court.gov.ua/Review/{{this.id}}" title="Читати рішення">{{this.id}}</a>
+            <span class="date">{{this.date}}</span></li>
+        {{/each}}
+        </ul>
+    </div>
+</script>
+
+<script src="https://d3js.org/d3-selection.v1.min.js"></script>
+<script src="https://d3js.org/d3-collection.v1.min.js"></script>
+<script src="https://d3js.org/d3-dispatch.v1.min.js"></script>
+<script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+<script src="https://d3js.org/d3-request.v1.min.js"></script>
+<script src="https://d3js.org/d3-time.v1.min.js"></script>
+<script src="https://d3js.org/d3-time-format.v2.min.js"></script>
+
+<script src="../lib/leaflet.js"></script>
+<script src="../lib/handlebars.min.js"></script>
+<script src="../lib/perfect-scrollbar.min.js"></script>
+<script src="../lib/leaflet-hash.js"></script>
+
+<script>window.__data_folder_root__ = "../";</script>
+<script src="../js/documents.js"></script>
+<script src="../js/main.js"></script>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-18136548-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
+</html>
