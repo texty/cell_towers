@@ -53,11 +53,26 @@
     var iframe = document.getElementsByTagName("iframe")[0];
 
     $(document).ready(function() {
-        $("#widget_code").text(getCode(iframe, 500, 600));
 
         $("#box").resizable({
-            handleSelector: ".win-size-grip"
+            handleSelector: ".win-size-grip",
+            onDrag: function() {
+                var w = $("#box").width();
+                var h = $("#box").height();
+
+                $("#widget_code").text(getCode(iframe, w, h));
+            }
         });
+
+        $("#box").on("mouseleave", function(){
+            var w = $("#box").width();
+            var h = $("#box").height();
+            $("#widget_code").text(getCode(iframe, w, h));
+        });
+
+
+
+        $("#widget_code").text(getCode(iframe, 500, 600));
 
     });
 
