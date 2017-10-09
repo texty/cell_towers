@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <title>Генератор віджета</title>
 
-    <style >
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,italic&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
+
+    <style>
+        body {
+            font-family: "Open Sans", Verdana, sans-serif;
+        }
+
         .win-size-grip {
             position: absolute;
             width: 16px;
@@ -21,12 +27,12 @@
 <body>
 
 
-<div>Змінити розмір - потягніть за правий нижній кут. Змінюйте позицію та зум на карті. Заберіть код у вікні знизу</div>
+<div style="max-width: 500px; font-size: 12px;">Щоб змінити розмір карти потягніть за правий нижній кут. Змінюйте позицію та зум на карті. Заберіть код у вікні знизу</div>
 
 <br>
 <div id="box" style="width: 500px; height: 600px; position: relative">
     <iframe src="http://texty.org.ua/d/cell_towers/widget/" frameborder="0" width="100%" height="100%"></iframe>
-    <div class="win-size-grip"></div>
+    <div class="win-size-grip" style="font-size: 10px;"></div>
 </div>
 
 
